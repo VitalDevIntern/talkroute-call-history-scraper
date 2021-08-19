@@ -29,9 +29,9 @@ async function connectBrowser() {
 async function main() {
     const { page } = await connectBrowser();
 
-    page.goto('https://cp.talkroute.com/callhistory', { waitUntil: 'load' });
+    // page.goto('https://cp.talkroute.com/callhistory', { waitUntil: 'load' });
 
-    let loggedIn = (await page.url() == 'https://cp.talkroute.com/login') ? false : true;
+    // let loggedIn = (await page.url() == 'https://cp.talkroute.com/login') ? false : true;
 
     // if (loggedIn == false) {
     //     await page.waitForSelector('#username');
