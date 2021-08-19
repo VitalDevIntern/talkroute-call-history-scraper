@@ -1,22 +1,22 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
-function getAccount() {
-    try {
-        return JSON.parse(fs.readFileSync('account.json'));
-    } catch (err) {
-        console.error(err);
-        console.log('Please provide an account.json file!');
-        process.exit();
-    }
-}
+// function getAccount() {
+//     try {
+//         return JSON.parse(fs.readFileSync('account.json'));
+//     } catch (err) {
+//         console.error(err);
+//         console.log('Please provide an account.json file!');
+//         process.exit();
+//     }
+// }
 
-const account = getAccount();
+// const account = getAccount();
 
-const creds = {
-    id: account.user.id,
-    password: account.user.password
-};
+// const creds = {
+//     id: account.user.id,
+//     password: account.user.password
+// };
 
 async function connectBrowser() {
     const browserURL = 'http://127.0.0.1:21222';
@@ -40,10 +40,10 @@ async function main() {
     //     await page.click('#_submit')
     // }
 
-    await page.waitForSelector('#username');
-    await page.type('#username', creds.id);
-    await page.type('#password', creds.password);
-    await page.click('#_submit')
+    // await page.waitForSelector('#username');
+    // await page.type('#username', creds.id);
+    // await page.type('#password', creds.password);
+    // await page.click('#_submit')
 
     async function scrapePage() {
         await page.waitForSelector('[class="fa fa-plus"]');
