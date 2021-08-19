@@ -33,12 +33,17 @@ async function main() {
 
     let loggedIn = (await page.url() == 'https://cp.talkroute.com/login') ? false : true;
 
-    if (loggedIn == false) {
-        await page.waitForSelector('#username');
-        await page.type('#username', creds.id);
-        await page.type('#password', creds.password);
-        await page.click('#_submit')
-    }
+    // if (loggedIn == false) {
+    //     await page.waitForSelector('#username');
+    //     await page.type('#username', creds.id);
+    //     await page.type('#password', creds.password);
+    //     await page.click('#_submit')
+    // }
+
+    await page.waitForSelector('#username');
+    await page.type('#username', creds.id);
+    await page.type('#password', creds.password);
+    await page.click('#_submit')
 
     async function scrapePage() {
         await page.waitForSelector('[class="fa fa-plus"]');
